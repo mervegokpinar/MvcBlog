@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Default</title>
+    <script src="~/ckeditor/ckeditor.js"></script>
+    <link href="~/ckeditor/contents.css" rel="stylesheet" />
+</head>
+<body>
+    <div style="padding-top:80px" class="container">
+        <form role="form" action="/Home/Default" method="post">
+            <label>Baslik:</label><br/>
+            @Html.TextBox("baslik", "", new { @id = "baslik"})<br/>
+            <label>İçerik:</label>
+            @Html.TextArea("makale", "", new { @id = "ckeditor", @class = "ckeditor" })
+            <div>
+                <button type="submit">ADD !!!</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

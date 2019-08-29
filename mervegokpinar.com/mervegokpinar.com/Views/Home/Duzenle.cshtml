@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model mervegokpinar.com.Models.Makale
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Duzenle</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/ckeditor/ckeditor.js"></script>
+    <link href="~/ckeditor/contents.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div style="padding-top:80px" class="container">
+        <form role="form" action="/Home/Duzenle2/@Model.ID" method="post">
+            <label>Baslik:</label><br />
+            @Html.TextBox("ID", Model.ID, new { @id = "ID" })<br />
+            <label>İçerik:</label><br/>
+            @Html.TextArea("yazi", Model.yazi, new { @id = "yazi", @class = "ckeditor" })
+            <div>
+                <button type="submit">Update !!!</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+
+</html>
